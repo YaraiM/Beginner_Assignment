@@ -19,7 +19,7 @@ public class Question1 {
       double number2 = scanner.nextDouble();
 
       double result;
-      boolean validCalculation = true;
+      boolean isValid = true;
 
       switch (operator) {
         case "+" -> result = number1 + number2;
@@ -28,7 +28,7 @@ public class Question1 {
         case "/" -> {
           if (number2 == 0) {
             System.out.println("エラー：0で割ることはできません");
-            validCalculation = false;
+            isValid = false;
             result = 0; //resultにダミー値を入力
 
           } else {
@@ -40,12 +40,12 @@ public class Question1 {
         default -> {
           System.out.println(
               "エラー：演算子が入力されなかったため、計算できません。入力値: " + operator);
-          validCalculation = false;
+          isValid = false;
           result = 0; //resultにダミー値を入力
         }
       }
 
-      if (validCalculation) {
+      if (isValid) {
         System.out.println(number1 + " " + operator + " " + number2 + " " + "= " + result);
       }
 
